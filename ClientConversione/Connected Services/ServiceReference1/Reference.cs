@@ -49,16 +49,71 @@ namespace ServiceReference1
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Valuta", Namespace="http://schemas.datacontract.org/2004/07/")]
+    public partial class Valuta : object
+    {
+        
+        private string NomeField;
+        
+        private string SiglaField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nome
+        {
+            get
+            {
+                return this.NomeField;
+            }
+            set
+            {
+                this.NomeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Sigla
+        {
+            get
+            {
+                return this.SiglaField;
+            }
+            set
+            {
+                this.SiglaField = value;
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService")]
     public interface IService
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetData", ReplyAction="http://tempuri.org/IService/GetDataResponse")]
+        string GetData(int value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetData", ReplyAction="http://tempuri.org/IService/GetDataResponse")]
         System.Threading.Tasks.Task<string> GetDataAsync(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService/GetDataUsingDataContractResponse")]
+        ServiceReference1.CompositeType GetDataUsingDataContract(ServiceReference1.CompositeType composite);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService/GetDataUsingDataContractResponse")]
         System.Threading.Tasks.Task<ServiceReference1.CompositeType> GetDataUsingDataContractAsync(ServiceReference1.CompositeType composite);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getValute", ReplyAction="http://tempuri.org/IService/getValuteResponse")]
+        ServiceReference1.Valuta[] getValute();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getValute", ReplyAction="http://tempuri.org/IService/getValuteResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.Valuta[]> getValuteAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/converti", ReplyAction="http://tempuri.org/IService/convertiResponse")]
+        double converti(double importo, string da, string a);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/converti", ReplyAction="http://tempuri.org/IService/convertiResponse")]
+        System.Threading.Tasks.Task<double> convertiAsync(double importo, string da, string a);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
@@ -111,14 +166,44 @@ namespace ServiceReference1
         {
         }
         
+        public string GetData(int value)
+        {
+            return base.Channel.GetData(value);
+        }
+        
         public System.Threading.Tasks.Task<string> GetDataAsync(int value)
         {
             return base.Channel.GetDataAsync(value);
         }
         
+        public ServiceReference1.CompositeType GetDataUsingDataContract(ServiceReference1.CompositeType composite)
+        {
+            return base.Channel.GetDataUsingDataContract(composite);
+        }
+        
         public System.Threading.Tasks.Task<ServiceReference1.CompositeType> GetDataUsingDataContractAsync(ServiceReference1.CompositeType composite)
         {
             return base.Channel.GetDataUsingDataContractAsync(composite);
+        }
+        
+        public ServiceReference1.Valuta[] getValute()
+        {
+            return base.Channel.getValute();
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.Valuta[]> getValuteAsync()
+        {
+            return base.Channel.getValuteAsync();
+        }
+        
+        public double converti(double importo, string da, string a)
+        {
+            return base.Channel.converti(importo, da, a);
+        }
+        
+        public System.Threading.Tasks.Task<double> convertiAsync(double importo, string da, string a)
+        {
+            return base.Channel.convertiAsync(importo, da, a);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

@@ -8,10 +8,10 @@
         Title="MainWindow" Height="475" Width="820">
     <Grid>
         <TextBox x:Name="Valore1" TextWrapping="Wrap" Margin="6,96,702,315" Panel.ZIndex="4" TextAlignment="Center"/>
-        <ComboBox ItemsSource="{Binding Name}" x:Name="Valuta1" Width="120" Margin="131,96,549,315"/>
+        <ComboBox ItemsSource="{Binding nameS}" x:Name="Valuta1" Width="120" Margin="131,96,549,315"/>
         <Label Content="=" Margin="327,96,447,315"/>
         <Label x:Name="Valore2" Content="Label" Margin="382,96,326,315"/>
-        <ComboBox ItemsSource="{Binding Name}" x:Name="Valuta2" Margin="538,92,64,319">
+        <ComboBox ItemsSource="{Binding nameS}" x:Name="Valuta2" Margin="540,96,62,315">
         </ComboBox>
         <Label Content="Convertitore di Valute" Margin="0,0,368,384" FontSize="36" RenderTransformOrigin="0.5,0"/>
 
